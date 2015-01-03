@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Jqproject</title>
+	<link rel="stylesheet" type="text/css" href="day.css">
+</head>
+<body>
+
+<h1>My Jqproject</h1>
+<button data-file="day">Day</button>
+<button data-file="night">Night</button>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+(function(){
+	var link = $('link');
+	$('button').on('click',function(){
+		var $this = $(this);
+		var stylesheet = $this.data('file');
+		link.attr('href',stylesheet+'.css');
+		$this.attr('disabled','disabled');
+		$this.siblings('button').removeAttr('disabled');
+		console.log(stylesheet);
+	})
+})();	
+</script>
+</body>
+</html>
