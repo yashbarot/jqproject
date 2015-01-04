@@ -3,13 +3,33 @@
 <head>
 	<title>My Jqproject</title>
 	<link rel="stylesheet" type="text/css" href="day.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <h1>My Jqproject</h1>
+<h2>Course - 1</h2>
 <button data-file="day">Day</button>
 <button data-file="night">Night</button>
 
+<h2>Course - 2</h2>
+<dl>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+
+</dl>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 (function(){
@@ -23,6 +43,18 @@
 		console.log(stylesheet);
 	})
 })();	
+
+(function(){
+	$('dd').filter(':nth-child(n+4)').addClass('hide');
+
+	$('dl').on('mouseenter','dt',function(){
+		$(this)
+			.next()
+			.slideDown(200)
+			.siblings('dd')
+				.slideUp(200);
+	});	
+})();
 </script>
 </body>
 </html>
